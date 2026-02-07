@@ -1,0 +1,45 @@
+<div class="container" @fadeIn>
+  @if (!showHeart && !showMessage) {
+    <h1  class="typing">
+      I built this with Angular…<br />
+      but it’s really built for you ❤️
+    </h1>
+  }
+
+  @if (showHeart && !showMessage) {
+    <div class="heart" @fadeIn (click)="revealMessage()"></div>
+    <p class="message">Please Click on heart.....I made this just for you ❤️</p>
+  }
+
+
+
+  @if (!showHeart && !showMessage) {
+    <button @fadeIn (click)="startSurprise()">
+      Start Surprise ✨
+    </button>
+  }
+
+   @if (showMessage && !showHeart) {
+    <div class="message" @fadeIn>
+      <h2>Will you be my Valentine? 💘</h2>
+
+
+      
+  <div class="buttons" @fadeIn>
+    <button class="yes" (click)="accept()">Yes ❤️</button>
+
+    <button
+      class="no"
+      [style.left.px]="noX"
+      [style.top.px]="noY"
+      (mouseenter)="moveNo()"
+      (touchstart)="moveNo()"
+    >
+      No 💔
+    </button>
+  </div>
+      <p>— Your favorite Angular developer 😉</p>
+    </div>
+  }
+</div>
+ 

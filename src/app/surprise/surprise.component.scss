@@ -1,0 +1,58 @@
+.surprise {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+.surprise .h2{
+    margin-bottom: 20px;
+}
+
+.big-heart {
+  width: 100px;           /* smaller width */
+  height: 100px;          /* smaller height */
+  background: #ff4d6d;    /* more vibrant red-pink */
+  position: relative;
+  transform: rotate(-45deg);
+  animation: pulse 1.2s infinite ease-in-out;  /* faster, smoother pulse */
+  margin-top: 20px;
+  cursor: pointer;        /* makes it feel interactive */
+  box-shadow: 0 5px 15px rgba(255, 77, 109, 0.5); /* soft glow */
+  transition: transform 0.2s ease; /* subtle hover effect */
+}
+
+.big-heart::before,
+.big-heart::after {
+  content: '';
+  width: 100px;           /* match main size */
+  height: 100px;
+  background: #ff4d6d;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.big-heart::before {
+  top: -50px;   /* adjusted to match smaller size */
+  left: 0;
+}
+
+.big-heart::after {
+  left: 50px;   /* adjusted to match smaller size */
+  top: 0;
+}
+
+.big-heart:hover {
+  transform: rotate(-45deg) scale(1.2); /* hover “pop” effect */
+}
+
+@keyframes pulse {
+  0% { transform: rotate(-45deg) scale(1); }
+  50% { transform: rotate(-45deg) scale(1.15); } /* slightly bigger pulse */
+  100% { transform: rotate(-45deg) scale(1); }
+}
+

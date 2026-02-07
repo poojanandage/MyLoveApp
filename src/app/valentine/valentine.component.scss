@@ -1,0 +1,140 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle, #1a1a1a, #000);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.typing {
+  font-size: 1.8rem;
+  animation: typing 3s steps(40), blink 0.7s infinite;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 90%;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.heart {
+  width: 120px;
+  height: 120px;
+  background: #ff4d6d;
+  position: relative;
+  transform: rotate(-45deg);
+  animation: pulse 1.5s infinite;
+  cursor: pointer;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 120px;
+  height: 120px;
+  background: #ff4d6d;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -60px;
+  left: 0;
+}
+
+.heart::after {
+  left: 60px;
+  top: 0;
+}
+
+@keyframes pulse {
+  0% { transform: rotate(-45deg) scale(1); }
+  50% { transform: rotate(-45deg) scale(1.1); }
+  100% { transform: rotate(-45deg) scale(1); }
+}
+
+.message h2 {
+  color: #ff6ec7;
+  font-size: 2rem;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.question {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+// .no {
+//   position: absolute;
+//   transition: left 0.3s ease, top 0.3s ease;
+//   background: #999;
+//   color: white;
+//   padding: 12px 28px;
+//   border-radius: 30px;
+//   border: none;
+//   cursor: pointer;
+// }
+
+.no {
+  position: absolute;
+  width: 100px;    /* matches noWidth */
+  height: 50px;    /* matches noHeight */
+  background: #999;
+  color: white;
+  padding: 12px 28px; /* optional, can adjust to fit */
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+
+@keyframes shake {
+  0% { transform: translate(0,0); }
+  25% { transform: translate(5px,0); }
+  50% { transform: translate(-5px,0); }
+  75% { transform: translate(5px,0); }
+  100% { transform: translate(0,0); }
+}
+
+.no:hover {
+  animation: shake 0.2s;
+}
+
